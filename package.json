@@ -1,0 +1,9 @@
+{
+  "name": "my-web-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "start-frontend": "cd frontend && npm start",
+    "start-backend": "cd backend && python main.py"
+  }
+}
