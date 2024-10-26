@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.custom-dialog-container .mat-mdc-dialog-surface {
+  background-color: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 20px; /* Optional: spacing */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Ensure buttons and other elements are styled appropriately */
+.custom-dialog-container h1.mat-dialog-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000000 !important; /* Black text */
+}
+
+.custom-dialog-container .mat-dialog-content {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #000000 !important; /* Black text */
+}

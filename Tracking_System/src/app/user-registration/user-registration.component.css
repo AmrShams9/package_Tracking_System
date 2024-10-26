@@ -1,57 +1,56 @@
 .registration-form {
-    width: 320px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f6f7; /* Light grey background */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: Arial, sans-serif;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    color: #606770; /* Subtle grey text for labels */
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccd0d5;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: border 0.3s;
-  }
-  
-  .form-group input:focus {
-    border-color: #1877f2; /* Facebook blue */
-    outline: none;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #1877f2; /* Facebook blue */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #155dbd; /* Slightly darker blue on hover */
-  }
-  
-  .submit-btn:disabled {
-    background-color: #ccd0d5; /* Disabled button color */
-    cursor: not-allowed;
-  }
-  
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f6f7; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #606770; /* Subtle grey text for labels */
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccd0d5;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #1877f2; /* Facebook blue */
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1877f2; /* Facebook blue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #155dbd; /* Slightly darker blue on hover */
+}
+
+.submit-btn:disabled {
+  background-color: #ccd0d5; /* Disabled button color */
+  cursor: not-allowed;
+}
