@@ -34,3 +34,10 @@ Navigate to the backend folder and install the required packages:
 cd ../Backend
 pip install -r requirements.txt
 ```
+
+## Starting the Project
+You can start both the frontend and backend applications from the main directory using the package.json provided.
+
+```bash
+npm start
+```
