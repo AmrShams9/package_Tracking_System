@@ -1,0 +1,66 @@
+body {
+  background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.top-left {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+}
+
+.button {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background: linear-gradient(to right, #E0C3FC, #8EC5FC);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-right .logo {
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.main-content {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.welcome-message h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1a1a70; /* Darker shade of purple */
+  font-weight: 700;
+}
+
+.welcome-message p {
+  font-size: 18px;
+  color: #555; /* Lighter text color */
+  margin-top: 10px;
+}
