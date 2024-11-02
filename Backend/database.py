@@ -3,8 +3,8 @@ from flask import jsonify
 
 # Database connection parameters
 host = "localhost"  # or your database host
-user = "Ali"  # replace with your PostgreSQL username
-password = "Ali1"  # replace with your PostgreSQL password
+user = "ibrahim"  # replace with your PostgreSQL username
+password = "ibrahim1"  # replace with your PostgreSQL password
 
 
 class DATABASE:
@@ -56,3 +56,4 @@ class DATABASE:
             return jsonify({'message': 'Login successful'}), 200
         else:
             return {'message': 'Invalid credentials'}, 401
+        

@@ -1,49 +1,49 @@
 {
-  "hash": "44e7ad14",
-  "configHash": "7e61056e",
-  "lockfileHash": "9f52d311",
-  "browserHash": "3dc0febd",
+  "hash": "28ca31a9",
+  "configHash": "06eb53a7",
+  "lockfileHash": "279793c6",
+  "browserHash": "3a0de11a",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "054ef904",
+      "fileHash": "eaf80d45",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "84218d18",
+      "fileHash": "b6669446",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "e00b24eb",
+      "fileHash": "688fda30",
       "needsInterop": false
     },
     "@angular/material/dialog": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/dialog.mjs",
       "file": "@angular_material_dialog.js",
-      "fileHash": "93ca18f3",
+      "fileHash": "7b7b758b",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "468c012b",
+      "fileHash": "8d6bc3ce",
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
-      "fileHash": "c0181fec",
+      "fileHash": "1b97e6aa",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "cd921a1f",
+      "fileHash": "ebc9f57d",
       "needsInterop": false
     }
   },

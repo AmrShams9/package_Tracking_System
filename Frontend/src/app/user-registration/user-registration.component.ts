@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { registerUser } from "../api";
+import { postData } from "../api";
 import {
   FormBuilder,
   FormGroup,
@@ -32,7 +32,7 @@ export class UserRegistrationComponent {
   async onSubmit() {
     if (this.registrationForm.valid) {
       console.log(this.registrationForm.value);
-      const response = await registerUser(this.registrationForm.value);
+      const response = await postData(this.registrationForm.value, "sign-up");
 
       if (response.status !== 201) {
         this.openErrorDialog("Registration failed. Please try again."); // Pass a specific error message

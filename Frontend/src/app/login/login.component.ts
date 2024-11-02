@@ -8,7 +8,7 @@ import {
   ReactiveFormsModule,
 } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { loginUser } from "../api";
+import { postData } from "../api";
 
 @Component({
   selector: "app-login",
@@ -30,7 +30,7 @@ export class LoginComponent {
   async onLogin() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      const response = await loginUser(this.loginForm.value);
+      const response = await postData(this.loginForm.value, "sign-in");
 
       if (response.status !== 200) {
         this.openErrorDialog(
