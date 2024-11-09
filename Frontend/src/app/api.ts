@@ -1,6 +1,5 @@
 const URL = "http://127.0.0.1:5000/";
 
-// Function to register a user
 async function postData(data: object, url: string): Promise<Response> {
   const response = await fetch(URL + url, {
     method: "POST",
@@ -10,15 +9,24 @@ async function postData(data: object, url: string): Promise<Response> {
     body: JSON.stringify(data),
   });
 
-  const jsonData = await response.json();
-
   if (response.ok) {
-    console.log("User registered successfully:", jsonData);
     return response;
   } else {
-    console.error("Registration failed:", jsonData.message);
-    return jsonData.message;
+    console.error(response);
+    return response;
   }
 }
 
-export { postData };
+async function getData(url: string): Promise<Response> {
+  const response = await fetch(URL + url);
+
+  if (response.ok) {
+    console.log(response);
+    return response;
+  } else {
+    console.error(response);
+    return response;
+  }
+}
+
+export { postData, getData };

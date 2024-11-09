@@ -1,0 +1,22 @@
+
+<button class="button button-home" [routerLink]="['/']">Home</button>
+
+<div>
+  <h2>Order Details</h2>
+  <p><strong>Order ID:</strong> {{ order.order_id }}</p>
+  <p><strong>Pickup Location:</strong> {{ order.pickup }}</p>
+  <p><strong>Drop Off Location:</strong> {{ order.dropOff }}</p>
+  <p><strong>Details:</strong> {{ order.details }}</p>
+  <p><strong>Delivery Date:</strong> {{ order.deliveryDate }}</p>
+  <p><strong>Status:</strong> {{ order.status }}</p>
+
+  <p><strong>Courier id:</strong>{{order.courier_id}} </p>
+
+  <button (click)="cancelOrder()" [disabled]="order.status !== 'Pending' && order.status !== 'Placed'">
+    Cancel Order
+  </button>
+  
+
+  
+</div>
+

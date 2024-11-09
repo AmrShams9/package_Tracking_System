@@ -1,0 +1,42 @@
+<button class="button button-home" [routerLink]="['/']">Home</button>
+
+<div *ngFor="let order of orders; let i = index">
+    <h1>Order {{ i + 1 }} </h1>
+    <p><strong>Delivery Date:</strong> {{ order.deliveryDate }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <button (click)="toggleVisibility(order.order_id)">Update Status</button>
+     
+    <div (click)="updateStatus($event, order.order_id)" class="status-options" [ngStyle]="{ visibility: visibleStatus[order.order_id] ? 'visible' : 'hidden' }">
+        <div class="options">
+            <div class="option" >Placed</div>
+            <div class="option" >Pending</div>
+            <div class="option" >Picked up</div>
+            <div class="option" >In transit</div>
+            <div class="option" >Delivered</div>
+        </div>
+    </div>
+
+    <p><strong>Order ID:</strong> {{ order.order_id }}</p>
+    <p><strong>Pickup Location:</strong> {{ order.pickup }}</p>
+    <p><strong>Drop Off Location:</strong> {{ order.dropOff }}</p>
+    <p><strong>Details:</strong> {{ order.details }}</p>
+
+    <div>
+        <strong>Assign Order to Courier:</strong><br>
+        <form (ngSubmit)="assignOrder(order.order_id, courierId)">
+          <label for="courierId">Courier ID:</label>
+          <input
+            type="text"
+            id="courierId"
+            [(ngModel)]="courierId"
+            name="courierId"
+            required
+          />
+          <button type="submit"> {{ order.courier_id ? 'Reassign' : 'Assign' }}</button>
+        </form>
+      </div>
+
+    <button (click)="deleteOrder(order.order_id)">Delete Order</button>
+    
+    <hr/>
+</div>

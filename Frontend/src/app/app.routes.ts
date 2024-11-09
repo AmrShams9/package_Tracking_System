@@ -1,7 +1,8 @@
 import { Routes } from "@angular/router";
-import { UserRegistrationComponent } from "./user-registration/user-registration.component";
-import { LoginComponent } from "./login/login.component";
-import { HomeComponent } from "./home/home.component"; // Import the HomeComponent
+import { AuthGuard } from "./app.guard";
+import { OrderDetailsComponent } from "./order-details/order-details.component";
+import { ManageOrdersComponent } from "./manage-orders/manage-orders.component";
+import { AssignedOrdersComponent } from "./assigned-orders/assigned-orders.component";
 
 export const routes: Routes = [
   {
@@ -22,11 +23,40 @@ export const routes: Routes = [
       import("./login/login.component").then((m) => m.LoginComponent),
   },
   {
-    path: "create_order",
+    path: "create-order",
     loadComponent: () =>
       import("./create-order/create-order.component").then(
         (m) => m.CreateOrderComponent
       ),
+    canActivate: [AuthGuard],
+    data: { role: ["customer", "admin"] },
+  },
+  {
+    path: "my-orders",
+    loadComponent: () =>
+      import("./my-orders/my-orders.component").then(
+        (m) => m.MyOrdersComponent
+      ),
+    canActivate: [AuthGuard],
+    data: { role: ["customer", "admin"] },
+  },
+  {
+    path: "order-details",
+    component: OrderDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { role: ["customer", "admin"] },
+  },
+  {
+    path: "manage-all-orders",
+    component: ManageOrdersComponent,
+    canActivate: [AuthGuard],
+    data: { role: ["admin"] },
+  },
+  {
+    path: "assigned-orders",
+    component: AssignedOrdersComponent,
+    canActivate: [AuthGuard],
+    data: { role: ["admin", "courier"] },
   },
   { path: "**", redirectTo: "" }, // Redirect to home on unknown paths
 ];

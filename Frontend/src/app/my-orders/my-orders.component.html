@@ -1,0 +1,9 @@
+<button class="button button-home" [routerLink]="['/']">Home</button>
+
+<div *ngFor="let order of orders; let i = index">
+    <h1>Order {{ i + 1 }}: {{ order.order_id }}</h1>
+    <p>Delivery Date: {{ order.deliveryDate }}</p>
+    <p>Status: {{order.status}}</p>
+    <button (click)="showDetails(order)">Show Details</button>
+    <hr />
+</div>

@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 .custom-dialog-container .mat-mdc-dialog-surface {
   background-color: #ffffff !important; /* White background */
   color: #000000 !important; /* Black text */
@@ -24,3 +20,98 @@ body {
   line-height: 1.5;
   color: #000000 !important; /* Black text */
 }
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%); */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0.5rem 0.2rem;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.top-left {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+}
+
+.button {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background: linear-gradient(to right, #E0C3FC, #8EC5FC);
+  /* transform: translateY(-2px); */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-home {
+  background: rgb(113, 150, 197);
+  margin: 0 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+.button-home:hover {
+  background: rgb(82, 108, 142);
+}
+
+.top-right .logo {
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.main-content {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.welcome-message h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1a1a70; /* Darker shade of purple */
+  font-weight: 700;
+}
+
+.welcome-message p {
+  font-size: 18px;
+  color: #555; /* Lighter text color */
+  margin-top: 10px;
+}
+.options {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.option {
+  padding: .5rem 1rem;
+  border: 1px solid rgba(174, 109, 109, .5);
+  border-radius: 5px;
+}
+

@@ -19,11 +19,18 @@
     <input type="tel" id="phone" formControlName="phone" required />
   </div>
 
+  
+
   <div class="form-group">
     <label for="password">Password:</label>
     <input type="password" id="password" formControlName="password" required />
   </div>
 
+  <div class="form-group form-group-checkbox">
+    <input [checked]="isChecked('courier')"  (change)="toggleValue($event)" class="role" type="checkbox" id="courier" formControlName="role">
+    <label for="courier">I am a courier</label>
+  </div>
+  
   <button
     type="submit"
     [disabled]="registrationForm.invalid"

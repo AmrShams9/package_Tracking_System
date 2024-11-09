@@ -1,0 +1,23 @@
+<button class="button button-home" [routerLink]="['/']">Home</button>
+
+<div *ngFor="let order of orders; let i = index">
+    <h1>Order {{ i + 1 }}: {{ order.order_id }}</h1>
+    <p>Pickup: {{ order.pickup }}</p>
+    <p>Status: {{order.status}}</p>
+    <p>Drop Off: {{order.dropOff}}</p>
+
+    <button (click)="Accept(order.order_id)">Accept</button>
+    <button (click)="Decline(order.order_id)">Decline</button>
+
+    <button (click)="toggleVisibility(order.order_id)">Update Status</button>
+
+    <div (click)="updateStatus($event, order.order_id)" class="status-options" [ngStyle]="{ visibility: visibleStatus[order.order_id] ? 'visible' : 'hidden' }">
+        <div class="options">
+            <div class="option" >Picked up</div>
+            <div class="option" >In transit</div>
+            <div class="option" >Delivered</div>
+        </div>
+    </div>
+    
+    <hr />
+</div>

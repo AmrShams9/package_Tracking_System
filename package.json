@@ -5,5 +5,9 @@
     "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
     "start-frontend": "cd frontend && npm start",
     "start-backend": "cd backend && python main.py"
+  },
+  "dependencies": {
+    "@angular/common": "^18.2.10",
+    "jwt-decode": "^4.0.0"
   }
 }

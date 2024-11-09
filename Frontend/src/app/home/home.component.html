@@ -1,17 +1,22 @@
 
 <div class="header">
   <div class="top-left">
-    <button (click)="goToLogin()" class="button">Login</button>
-    <button (click)="goToRegister()" class="button">Register</button>
-    <button (click)="goToPlaceOrder()" class="button">Create Order</button>
+    <button *ngIf="! isLoggedIn()" (click)="goToLogin()" class="button">Login</button>
+    <button *ngIf="! isLoggedIn()" (click)="goToRegister()" class="button">Register</button>
+    <button *ngIf="isLoggedIn() && (isCustomer() || isAdmin())" (click)="goToCreateOrder()" class="button">Create Order</button>
+    <button *ngIf="isLoggedIn() && (isCustomer() || isAdmin())" (click)="goToMyOrders()" class="button">My Orders</button>
+    <button *ngIf="isLoggedIn() && isAdmin()" (click)="goToMyMangeOrders()" class="button">Manage Orders</button>
+    <button *ngIf="isLoggedIn() && isCourier()" (click)="goToAssignedOrders()" class="button">Assigned Orders</button>
+    <button *ngIf="isLoggedIn()" (click)="logout()" class="button">Logout</button>
+
   </div>
   <div class="top-right">
-    <!-- <img src="assets/logo.png" alt="logo" class="logo" /> -->
+    <!-- <img src="../assets/logo.png" alt="logo" class="logo" /> -->
   </div>
 </div>
 <main class="main-content">
   <div class="welcome-message">
-    <h1>Welcome to Our Service</h1>
+    <h1>Welcome {{ username }}</h1>
     <p>Choose an option above to get started.</p>
   </div>
 </main>

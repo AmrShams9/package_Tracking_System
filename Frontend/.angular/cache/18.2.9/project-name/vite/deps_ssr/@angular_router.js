@@ -1,7 +1,8 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Title
-} from "./chunk-4YA5OEEO.js";
+} from "./chunk-UN5MP5CG.js";
+import "./chunk-JD5YZ4BN.js";
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -5580,7 +5581,7 @@ function mapToCanDeactivate(providers) {
 function mapToResolve(provider) {
   return (...params) => inject(provider).resolve(...params);
 }
-var VERSION = new Version("18.2.8");
+var VERSION = new Version("18.2.11");
 export {
   ActivatedRoute,
   ActivatedRouteSnapshot,
@@ -5664,7 +5665,7 @@ export {
 
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.11
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)

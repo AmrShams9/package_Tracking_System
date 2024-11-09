@@ -71,3 +71,16 @@ h2 {
   cursor: not-allowed;
   transform: none;
 }
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center; /* Center the checkbox vertically */
+  gap:.5rem;
+  justify-content: start;
+
+}
+
+.role{
+  width: min-content!important;
+
+}
