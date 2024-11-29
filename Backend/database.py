@@ -1,15 +1,17 @@
 import math
 
 import psycopg2
+import os
 from flask import jsonify
 from database_utlis import DatabaseUtils
 from datetime import datetime
 from flask_jwt_extended import create_access_token, decode_token
 
+
 # Database connection parameters
-host = "localhost"  # or your database host
-user = "ibrahim"  # replace with your PostgreSQL username
-password = "ibrahim1"  # replace with your PostgreSQL password
+host = os.getenv('DB_HOST', 'localhost')  # Default to localhost, but in Docker, use the service name (db)
+user = os.getenv('DB_USER', 'postgres')  # Database username
+password = os.getenv('DB_PASSWORD', 'ibrahim1')  # Database password
 
 
 def jsonify_order(orders):
@@ -37,7 +39,7 @@ class DATABASE:
             host=host,
             database=database_name,
             user=user,
-            password=password
+            password=password   
         )
         self.cursor = self.connection.cursor()
 

@@ -1,0 +1,55 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    command: /bin/sh -c "curl -sSL https://github.com/vishnubob/wait-for-it/raw/master/wait-for-it.sh -o wait-for-it.sh && chmod +x wait-for-it.sh && ./wait-for-it.sh db:5432 -- python main.py"
+    environment:
+      - FLASK_APP=main.py
+      - DB_NAME=packageDB
+      - DB_HOST=db
+      - DB_USER=postgres
+      - DB_PASSWORD=ibrahim1
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ibrahim1
+      POSTGRES_DB: packageDB
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data  # Mount the volume to persist data
+    networks:
+      - app-network
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d packageDB -h localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:  # Define the persistent volume
+
+networks:
+  app-network:
+    driver: bridge

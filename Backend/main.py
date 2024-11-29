@@ -4,13 +4,16 @@ from database import DATABASE
 from flask_jwt_extended import (
     JWTManager, create_access_token, jwt_required, get_jwt_identity
 )
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 app.config['JWT_SECRET_KEY'] = 'thisisasupersecretkey'  # Change to a secure key
 jwt = JWTManager(app)
-db = DATABASE("packageDB")
+
+db_name = os.getenv('DB_NAME', 'packageDB')
+db = DATABASE(db_name)
 
 db.get_all_orders()
 
@@ -27,7 +30,7 @@ def login():
 def register():
     if request.method == 'POST':
         user = request.get_json()
-
+        print(user)
         data = db.register(user)
         return data
 
@@ -133,4 +136,5 @@ def courier_update_order_status():
         return response
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
