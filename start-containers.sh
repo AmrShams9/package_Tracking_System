@@ -11,7 +11,7 @@ docker run -d \
   -e POSTGRES_USER=postgres \
   -e POSTGRES_PASSWORD=ibrahim1 \
   -e POSTGRES_DB=packageDB \
-  -v "./insertadmin.sql:/docker-entrypoint-initdb.d/init.sql" \
+  -v "$(pwd)/insertadmin.sql:/docker-entrypoint-initdb.d/init.sql" \
   -v package_tracking_system_postgres_data:/var/lib/postgresql/data \
   -p 5433:5432 \
   --health-cmd="pg_isready -U postgres -d packageDB -h localhost" \
@@ -30,7 +30,7 @@ docker build -t backend ./backend
 echo "Starting backend container..."
 docker run -d \
   --name backend \
-  -p 5000:5000 \
+  -p 5001:5000 \
   -e FLASK_APP=main.py \
   -e DB_NAME=packageDB \
   -e DB_HOST=db \

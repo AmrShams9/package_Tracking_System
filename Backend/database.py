@@ -44,7 +44,7 @@ class DATABASE:
         self.cursor = self.connection.cursor()
 
         self.query = DatabaseUtils()
-
+        
         self.current_user_id = None
         self.current_role = None
 

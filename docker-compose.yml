@@ -4,7 +4,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "5001:5000"
     command: /bin/sh -c "curl -sSL https://github.com/vishnubob/wait-for-it/raw/master/wait-for-it.sh -o wait-for-it.sh && chmod +x wait-for-it.sh && ./wait-for-it.sh db:5432 -- python main.py"
     environment:
       - FLASK_APP=main.py
