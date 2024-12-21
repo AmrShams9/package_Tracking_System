@@ -139,3 +139,6 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
+
+
+Frontend/.angular/cache/
